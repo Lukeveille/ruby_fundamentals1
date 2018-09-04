@@ -1,4 +1,5 @@
-distance = 0;
+distance = 0
+energy = 5
 
 while true do
     print "Would you like to walk or run? "
@@ -6,17 +7,25 @@ while true do
 
     if movement == "walk"
         distance += 1
-        # puts "Distance from home is #{distance}km."
-    elsif movement == "run"
+        energy += 1
+    elsif movement == "run" && energy > 0
         distance += 5
-        
+        energy -= 2
+    elsif movement == "run"
+        puts "Not enough energy"
+        next
+    elsif movement == "eat"
+        energy += 1
+    elsif movement == "rest"
+        energy += 2
     elsif movement == "go home"
         break
     else
         puts "Not a valid response!"
         next
     end
-    puts "Distance from home is #{distance}km."
+
+    puts "Distance from home is #{distance}km, and you have #{energy} units of energy left."
 end
 
 puts "Going home, you travelled a total of #{distance}km."
