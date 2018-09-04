@@ -34,11 +34,12 @@ else
     puts "Hello #{name}"
 end
 
-# Will let the user know if their name is the same as mine.
+# Lets the user know if their name is the same as mine.
 if name == "Luke"
     puts "We have the same name!"
 end
 
+# Evaluates if the first number entered was the secret number.
 if number == secret_number
     puts "You win!"
 elsif (number == secret_number - 1) || (number == secret_number + 1)
