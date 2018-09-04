@@ -8,12 +8,14 @@ while true do
     if movement == "walk"
         distance += 1
         energy += 1
-    elsif movement == "run" && energy > 0
-        distance += 5
-        energy -= 2
     elsif movement == "run"
-        puts "Not enough energy"
-        next
+        if energy > 0
+            distance += 5
+            energy -= 2
+        else
+            puts "Not enough energy"
+            next
+        end
     elsif movement == "eat"
         energy += 1
     elsif movement == "rest"
